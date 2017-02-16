@@ -172,3 +172,18 @@ debug: false
 # variable to 'true'.
 # Docs: http://docs.openstack.org/developer/openstack-ansible-security/
 # apply_security_hardening: true
+
+## git mirror support
+# Some networks choose to have a central mirror of the various git
+# repositories we require. Therefore, we have a single central variable
+# which is used to construct git URLs for the OpenStack projects.
+
+# NOTE: if this is set to anything other than git.openstack.org, you
+# need to export ANSIBLE_ROLE_FETCH_MODE=git-clone before running
+# scripts/bootstrap-ansible.sh
+git_base_url_openstack: git://git.openstack.org
+
+# NOTE: if this is set to anything other than github.com, you
+# need to export ANSIBLE_ROLE_FETCH_MODE=git-clone before running
+# scripts/bootstrap-ansible.sh
+git_base_url_github: git://github.com
