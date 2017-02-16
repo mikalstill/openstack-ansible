@@ -15,7 +15,7 @@
 
 - block:
     - name: Check if swap is already enabled
-      command: grep /openstack/swap.img /proc/swaps
+      command: "[[ `wc -l /proc/swaps` -gt 1 ]]"
 
   rescue:
     - name: Create swap file
